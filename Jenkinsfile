@@ -5,9 +5,12 @@ pipeline {
         }
     }
     stages {
-        stage("Hello") {
+        
+        stage("Create Nginx") {
             steps{
-                echo("Hellow Pipeline")
+                sh 'docker run -d --restart unless-stopped nginx'
+                sh 'docker ps -n 1'
+                echo 'New Container Success Created'
             }
         }
     }
