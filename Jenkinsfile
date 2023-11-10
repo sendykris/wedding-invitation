@@ -14,7 +14,7 @@ pipeline {
         }
         stage("Copy Cloning") {
             steps{
-                sh 'docker cp ~/workspace/website-statis/wedding-invitation/. mynginx1:/usr/share/nginx/html'
+                sh 'docker cp ~/workspace/jenkins-nginx mynginx1:/usr/share/nginx/html'
             }
         }
     }
